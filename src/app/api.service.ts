@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   //URL to Django server
-  baseurl =  'http://dcogiel.pythonanywhere.com' //'http://127.0.0.1:8000'
+  baseurl = 'http://127.0.0.1:8000' //'http://dcogiel.pythonanywhere.com'
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor(private http: HttpClient, private cookieExtractor: HttpXsrfTokenExtractor) { }
