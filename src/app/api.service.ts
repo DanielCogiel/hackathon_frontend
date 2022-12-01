@@ -2,18 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpXsrfTokenExtractor } from '@angular/common/http'
 import { Observable } from 'rxjs';
 
-//ANOTHER COMMENT
-
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
   //URL to Django server
-  baseurl = 'http://127.0.0.1:8000' //'http://dcogiel.pythonanywhere.com'
+  baseurl = 'http://dcogiel.pythonanywhere.com' //'http://127.0.0.1:8000'
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
-
-  //
 
   constructor(private http: HttpClient, private cookieExtractor: HttpXsrfTokenExtractor) { }
 
