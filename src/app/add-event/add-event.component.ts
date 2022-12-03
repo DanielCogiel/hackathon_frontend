@@ -40,7 +40,7 @@ export class AddEventComponent {
           console.log(data)
         },
         error => {
-          console.log(error)
+          console.log(error) //pokaz alert ze cos zle wpisane 
         }
       )
     }

@@ -1,6 +1,7 @@
 form {
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
 }
 
 button {
@@ -14,4 +15,14 @@ button {
     display: flex;
     flex-direction: column;
    
+}
+mat-form-field {
+    width: 500px;
+}
+
+.btn {
+    width: 500px;
+    height: 50px;
+    background-color: rgb(59, 136, 136);
+    font-weight:600;
 }

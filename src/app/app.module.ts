@@ -9,7 +9,9 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { MatSortModule} from "@angular/material/sort";
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import { MatFormFieldModule} from '@angular/material/form-field';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +25,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddEventComponent } from './add-event/add-event.component';
+import { ProfilComponent } from './profil/profil.component';
 
 
 
@@ -36,6 +39,7 @@ import { AddEventComponent } from './add-event/add-event.component';
     CreateEventComponent,
     NavbarComponent,
     AddEventComponent,
+    ProfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,9 @@ import { AddEventComponent } from './add-event/add-event.component';
     MatSortModule,
     MatTableModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

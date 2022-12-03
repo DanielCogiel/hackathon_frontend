@@ -11,6 +11,7 @@ export class ApiService {
 
   
   token!:string
+  roomNumber!: number;
   //URL to Django server
   baseurl =  'http://dcogiel.pythonanywhere.com' //'http://127.0.0.1:8000' 
   httpHeaders = new HttpHeaders ({'Content-Type': 'application/json'});
@@ -63,7 +64,7 @@ export class ApiService {
   getEvents(): Observable<any> {
     var httpHeaders1= new HttpHeaders ({'Content-Type': 'application/json',"Authorization": "Token " + this.token})
     console.log(this.token)
-    return this.http.get(this.baseurl + '/events/', 
+    return this.http.get(this.baseurl + '/events/tagRelated/', 
     {headers: httpHeaders1, withCredentials:true});
   
   }
@@ -73,6 +74,14 @@ export class ApiService {
     const body = event;
     return this.http.post(this.baseurl + '/events/', 
     body,
+    {headers: httpHeaders1, withCredentials:true});
+  }
+
+
+  getRoomNumber(): Observable<any> {
+    var httpHeaders1= new HttpHeaders ({'Content-Type': 'application/json',"Authorization": "Token " + this.token})
+    console.log(this.token)
+    return this.http.get(this.baseurl + '/rooms/matchRoom', 
     {headers: httpHeaders1, withCredentials:true});
   }
   

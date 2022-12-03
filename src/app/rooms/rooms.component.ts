@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-rooms',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class RoomsComponent {
 
+
+  constructor(private api:ApiService) {}
+
+  selectRoom(value: number) {
+    this.api.roomNumber=value;
+  }
 }

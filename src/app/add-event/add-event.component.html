@@ -1,14 +1,40 @@
 <div class="container">
-    <form [formGroup]="eventForm">
+  
+    <form [formGroup]="eventForm" novalidate>
 
-        <input mat-input placeholder="Day" id="day" type="text" formControlName="day" [(ngModel)]="day">
-        <input mat-input placeholder="Time" id="time" type="text" formControlName="time" [(ngModel)]="time">
-        <input mat-input placeholder="Event name" id="eventName" type="text" formControlName="eventName" [(ngModel)]="eventName">
-        <input mat-input id="tag" placeholder="Tag:"type="text" formControlName="tag" [(ngModel)]="tag">
+        <mat-form-field> 
+        <input matInput placeholder="Day" id="day" type="text" formControlName="day" [(ngModel)]="day"
+         ngModel pattern="Monday|Thursday|Wednesday|Thusday|Friday|Saturday">
+        <mat-error *ngIf="eventForm.controls['day'].hasError('pattern')">
+        <strong>Day:</strong> Monday, Thusday, Wednesday, Thursday, Friday, Saturday </mat-error>
+        </mat-form-field>
+
+        <mat-form-field> 
+        <input matInput placeholder="Time" id="time" type="text" formControlName="time" [(ngModel)]="time"
+        ngModel pattern="(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$">
+        <mat-error *ngIf="eventForm.controls['time'].hasError('pattern')">
+            <strong>Time:</strong> 12:00:00
+                  </mat-error>
+        </mat-form-field>
+
+        <mat-form-field> 
+        <input matInput placeholder="Event name" id="eventName" type="text" formControlName="eventName" [(ngModel)]="eventName">
+        <mat-error *ngIf="eventForm.controls['eventName'].hasError('required')"> </mat-error>
+        </mat-form-field>
+
+        <mat-form-field> 
+        <input matInput id="tag" placeholder="Tag:"type="text" formControlName="tag" [(ngModel)]="tag"
+        ngModel pattern="Theater | Jogging | Cinema|FIFA|Aquatics|Classical music|Extreme sports|Popular music|Team games">
+        <mat-error *ngIf="eventForm.controls['tag'].hasError('pattern')">
+            <strong>Tag:</strong> Theater, Jogging, Cinema, FIFA, Aquatics, Classical music, Extreme sports, Popular music, Team games
+                  </mat-error>
+        </mat-form-field>
     
+               
     </form>
+    <button class="btn" (click)="addEvent()">Add event</button> 
 
-    <button (click)="addEvent()">Add event</button> 
-
-    <button routerLink="/plan">Back to plan</button>
+    <button class="btn" routerLink="/plan">Back to plan</button>
 </div>
+
+
