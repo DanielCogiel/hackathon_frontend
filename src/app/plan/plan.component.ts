@@ -1,17 +1,11 @@
 import { Time } from '@angular/common';
 import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
+import { Event } from '../event';
 
-export interface PeriodicElement {
-  day: string;
-  time: number;
-  eventName: string;
-  tag: string;
-}
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { day: 'Monday', time: 8.00, eventName: "Swimming", tag: "aquatics"},
-  { day: 'Monday', time: 10.00, eventName: "Swimming", tag: "aquatics"},
-];
+
+
 
 @Component({
   selector: 'app-plan',
@@ -20,9 +14,24 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class PlanComponent {
 
+  events: Event[] = [];
   displayedColumns: string[] = ['day','time', 'eventName', 'tag'];
-  dataSource = ELEMENT_DATA;
-  
-
+  dataSource: any;
   yourRoom: Number = 200;
+
+  constructor (private api: ApiService) {}
+
+  ngOnInit(): void {
+    this.api.getEvents().subscribe(
+      data =>{ 
+        this.events = data;
+        this.dataSource= this.events
+      },
+      error => { console.log(error)}
+    )
+
+    
+  }
+
+
 }

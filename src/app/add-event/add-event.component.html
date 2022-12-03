@@ -1,12 +1,14 @@
-
+<div class="container">
     <form [formGroup]="eventForm">
 
-        <label for="username">Username </label>
-        <input id="username" type="text" formControlName="username" [(ngModel)]="username">
-      
-        <label for="password">Password: </label>
-        <input id="password" type="text" formControlName="password" [(ngModel)]="password">
-      
-        </form>
+        <input mat-input placeholder="Day" id="day" type="text" formControlName="day" [(ngModel)]="day">
+        <input mat-input placeholder="Time" id="time" type="text" formControlName="time" [(ngModel)]="time">
+        <input mat-input placeholder="Event name" id="eventName" type="text" formControlName="eventName" [(ngModel)]="eventName">
+        <input mat-input id="tag" placeholder="Tag:"type="text" formControlName="tag" [(ngModel)]="tag">
     
-      <button> Create new Event</button>
+    </form>
+
+    <button (click)="addEvent()">Add event</button> 
+
+    <button routerLink="/plan">Back to plan</button>
+</div>

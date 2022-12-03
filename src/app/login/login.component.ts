@@ -20,7 +20,7 @@ import { ApiService } from '../api.service';
   username!: String
   password!: String
 
-  token!: String    // dodawaj do post put get :))
+  public token!: string    // dodawaj do post put get :))
 
   routerLink: String = ''
 
@@ -45,7 +45,8 @@ import { ApiService } from '../api.service';
     this.api.loginUser(this.username, this.password).subscribe(
       data => {
         console.log(data)
-        this.token = data
+        this.token = data.token
+        this.api.token= data.token
         this.routerLink='/plan';
 
       }, error => {
@@ -53,4 +54,6 @@ import { ApiService } from '../api.service';
       }
     );
   }
+
+
 }
