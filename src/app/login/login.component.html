@@ -1,0 +1,17 @@
+<div> 
+    <div class="container"> 
+    <h1>LOGIN</h1>
+        <form [formGroup]="profileForm">
+
+            <label for="username">Username </label>
+            <input id="username" type="text" formControlName="username" [(ngModel)]="username">
+          
+            <label for="password">Password: </label>
+            <input id="password" type="text" formControlName="password" [(ngModel)]="password">
+          
+        </form>
+        <button class="btnLoginIn" (click)="login()" [routerLink]="[routerLink]">Submit</button>
+        <a href="">Forgot password?</a>
+    </div>
+</div>
+

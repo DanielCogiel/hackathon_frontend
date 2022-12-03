@@ -12,7 +12,7 @@ export class AppComponent {
   selectedMovie;
 
   constructor(private api:ApiService) {
-    this.getMovies();
+    //this.getMovies();
     this.selectedMovie = {id: -1, title: "", description: "", year: ""};
   }
 

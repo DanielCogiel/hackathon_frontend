@@ -45,4 +45,13 @@ export class ApiService {
     return this.http.delete(this.baseurl + "/movies/" + id + "/", 
     {headers: {'Content-Type': 'application/json'}, withCredentials:true});
   }
+
+  loginUser(username: String, password:String) : Observable<any>
+  {
+    const user = {username: username, password:password};
+    return this.http.post(this.baseurl + "/api-token-auth/" , 
+    user,
+    {headers: {'Content-Type': 'application/json'}, withCredentials:true});
+  }
+  
 }

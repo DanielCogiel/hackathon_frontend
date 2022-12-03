@@ -1,0 +1,49 @@
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    margin-top:  50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    box-shadow: 0 0 40px 3px beige;
+    width: 660px;
+    margin: 0 auto 0 auto;
+    background-color: antiquewhite;
+    padding: 15px 32px;
+    border: 2px solid antiquewhite;
+    border-radius: 10px;
+    height: 270px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+#buttonSubmit{
+    margin-bottom: 10px;
+}
+form{
+    margin-left: 170px;
+}
+a{
+    margin-left: 170px;
+
+}
+#nick{
+    margin-left: 40px;
+}
+#password{
+    margin-left: 5px;
+}
+
+.btnLoginIn {
+    width: 100px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+ 
