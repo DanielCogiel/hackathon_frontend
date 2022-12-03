@@ -20,6 +20,8 @@ import { ApiService } from '../api.service';
   username!: String
   password!: String
 
+  disabled : boolean = false;
+
   public token!: string    // dodawaj do post put get :))
 
   routerLink: String = ''

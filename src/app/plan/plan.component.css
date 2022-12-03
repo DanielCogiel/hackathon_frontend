@@ -1,0 +1,29 @@
+.btn {
+    width: 500px;
+    height: 50px;
+    background-color: rgb(125, 214, 214);
+    font-weight:600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-color: transparent;
+}
+
+h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    caret-color: transparent;
+}
+
+.container {
+    box-shadow: 0 0 40px 3px rgb(94, 198, 198);
+    caret-color: transparent;
+}

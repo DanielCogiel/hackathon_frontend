@@ -1,45 +1,47 @@
-<div class="container">
-    <!-- Hello nick-zmienna -->
-    <h1>Hello </h1> 
-    <div class="information">
-        <h2>Interests</h2>
-<div class="interests">
-    <ul>
-        <div class="part">
-            <li><button type="button"><b>Theater</b></button></li>
-            <li><button type="button"><b>Jogging</b></button></li>
-            <li><button type="button"><b>Cinema</b></button></li>
-        </div>
-        <div class="part">
-            <li><button type="button"><b>FIFA</b></button></li>
-            <li><button type="button"><b>Aquatics</b></button></li>
-            <li><button type="button"><b>Classical music</b></button></li>
-        </div>
-        <div class="part">
-            <li><button type="button"><b>Extreme sports</b></button></li>
-            <li><button type="button"><b>Popular music</b></button></li>
-            <li><button type="button"><b>Team games</b></button></li>
-        </div>
-    </ul>
+<div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Your tags</th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+  
     
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 </div>
-<h2>Preferences</h2>
-<div class="preferences">
-<ul>
-    <div class="opossite">
-        <li><button type="button"><b>Silence</b></button></li>
-        <li><button type="button"><b>Music</b></button></li>
-    </div>
-    <div class="opossite">
-        <li><button type="button"><b>Small room(up to 5 people)</b></button></li>
-        <li><button type="button"><b>Big room(around 15 people)</b></button></li>
-    </div>
-    <div class="opossite">
-        <li><button type="button"><b>Introvert</b></button></li>
-        <li><button type="button"><b>Extrovert</b></button></li>
-    </div>
-</ul> 
-</div>
-</div>
+<div>
+
+  <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Your preferences</th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+  
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 </div>
 
+<button class="btn" routerLink="/plan">Back to plan</button>

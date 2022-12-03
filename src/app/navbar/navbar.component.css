@@ -1,5 +1,6 @@
 .nav-bar {
-    background-color:  rgb(211, 234, 243);
+    background-color:  rgb(182, 221, 225);
+    caret-color: transparent;
 }
 .filler {
     flex: 1 1 auto;
@@ -19,4 +20,5 @@
 .title {
     font-size: 30px;
     margin-left: 10px;
+    caret-color: transparent;
 }

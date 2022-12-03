@@ -1,16 +1,27 @@
 
     <div class="container"> 
     <h1>LOGIN</h1>
-        <form [formGroup]="profileForm">
+        <form [formGroup]="profileForm" novalidate>
 
-            <label for="username">Username </label>
-            <input id="username" type="text" formControlName="username" [(ngModel)]="username">
-          
-            <label for="password">Password: </label>
-            <input id="password" type="text" formControlName="password" [(ngModel)]="password">
-          
+            <mat-form-field>
+            <!-- <label for="username">Username </label> -->
+            <input matInput id="username" type="text" formControlName="username" [(ngModel)]="username" placeholder="Username">
+            <mat-error *ngIf="profileForm.controls['username'].hasError('required')"> 
+                <strong>Username</strong> is empty </mat-error>
+        </mat-form-field>
+
+       <mat-form-field>
+            <!-- <label for="password">Password: </label> -->
+            <input matInput id="password" type="password" formControlName="password" [(ngModel)]="password" placeholder="Password">
+            <mat-error *ngIf="profileForm.controls['password'].hasError('required')"> 
+                <strong>Password</strong> is empty </mat-error>
+        </mat-form-field>
         </form>
-        <button class="btnLoginIn" (click)="login()" [routerLink]="[routerLink]">Submit</button>
+        <button class="btnLoginIn" (click)="login()" [routerLink]="[routerLink]"
+        [disabled]="
+        profileForm.controls['password'].hasError('required') ||
+        profileForm.controls['username'].hasError('required')"
+        >Submit</button>
         <a href="">Forgot password?</a>
     </div>
 

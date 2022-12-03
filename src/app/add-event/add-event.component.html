@@ -19,12 +19,13 @@
 
         <mat-form-field> 
         <input matInput placeholder="Event name" id="eventName" type="text" formControlName="eventName" [(ngModel)]="eventName">
-        <mat-error *ngIf="eventForm.controls['eventName'].hasError('required')"> </mat-error>
+        <mat-error *ngIf="eventForm.controls['eventName'].hasError('required')"> 
+        <strong>Event name</strong> is empty </mat-error>
         </mat-form-field>
 
         <mat-form-field> 
         <input matInput id="tag" placeholder="Tag:"type="text" formControlName="tag" [(ngModel)]="tag"
-        ngModel pattern="Theater | Jogging | Cinema|FIFA|Aquatics|Classical music|Extreme sports|Popular music|Team games">
+        ngModel pattern="Theater|Jogging|Cinema|FIFA|Aquatics|Classical music|Extreme sports|Pop music|Team games">
         <mat-error *ngIf="eventForm.controls['tag'].hasError('pattern')">
             <strong>Tag:</strong> Theater, Jogging, Cinema, FIFA, Aquatics, Classical music, Extreme sports, Popular music, Team games
                   </mat-error>
@@ -32,7 +33,16 @@
     
                
     </form>
-    <button class="btn" (click)="addEvent()">Add event</button> 
+    <button 
+    routerLink="/plan"
+    class="btn" 
+    (click)="addEvent()"
+     [disabled]="
+     eventForm.controls['tag'].hasError('pattern') ||
+     eventForm.controls['eventName'].hasError('required') ||
+     eventForm.controls['time'].hasError('pattern') ||
+     eventForm.controls['day'].hasError('pattern')"
+     >Add event</button> 
 
     <button class="btn" routerLink="/plan">Back to plan</button>
 </div>

@@ -1,8 +1,8 @@
 <h2>Create your day in work with us</h2>
-
-<h3> Your recommended {{yourRoomRecomended}} </h3> 
-<h3> Your selected {{yourRoomSelected}} </h3> 
-<button routerLink="/rooms">Change room</button>
+<h3> Your recommended room: {{yourRoomRecomended}} </h3> 
+<h3> Your selected room: {{yourRoomSelected}} </h3>
+<button class="btn" routerLink="/rooms">Choose room</button>
+<div class="container" >
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -41,5 +41,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <button routerLink="/add-event">Create new event</button>
+  </div>
+  <button  class="btn" routerLink="/add-event">Create new event</button>
   
